@@ -1,0 +1,95 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Cars.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cars Library</h1>
+
+<section>
+    <p>
+        @if (ViewData["AdminCookies"] != null)
+        {
+            <button> <a asp-page="Create">Add A New Car</a></button>
+        }
+    </p>
+</section>
+
+<section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Model)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Price)
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+                    Booked Status
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Car)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)kr
+                    </td>
+                    <td class="Image-overflow">
+                        <img src="@item.ImagePath1" style="max-width: 200px" />
+                    </td>
+                    <td class="Image-overflow">
+                        <img src="@item.ImagePath2" style="max-width: 200px" />
+                    </td>
+                    <td class="Image-overflow">
+                        <img src="@item.ImagePath3" style="max-width: 200px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsBooked)
+                    </td>
+                    <td>
+
+                        @if (ViewData["AdminCookies"] != null)
+                        {
+                            <button class="EditButton"> <a asp-page="./Edit" asp-route-id="@item.CarId">Edit</a> </button>;
+                            <button class="DetailsButton"><a asp-page="./Details" asp-route-id="@item.CarId">Details</a> </button>;
+                            <button class="DeleteButton"> <a asp-page="./Delete" asp-route-id="@item.CarId">Delete</a> </button>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <section>
+    </section>
+
+</section>

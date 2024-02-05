@@ -1,0 +1,93 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Cars.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    var item = Model.Car;
+}
+<section>
+    <h1>Edit</h1>
+</section>
+<section>
+    <h4>Car</h4>
+
+</section>
+<hr />
+
+<section>
+    <div class="row">
+        <div class="col-md-4">
+            <table>
+                <tbody>
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Car.CarId" />
+                    <td>
+                        <label asp-for="Car.Model" class="control-label"></label>
+                        <input asp-for="Car.Model" class="form-control" />
+                        <span asp-validation-for="Car.Model" class="text-danger"></span>
+                    </td>
+                    <td>
+                        <label asp-for="Car.Brand" class="control-label"></label>
+                        <input asp-for="Car.Brand" class="form-control" />
+                        <span asp-validation-for="Car.Brand" class="text-danger"></span>
+
+                    </td>
+                    <td>
+                        <label asp-for="Car.Year" class="control-label"></label>
+                        <input asp-for="Car.Year" class="form-control" />
+                        <span asp-validation-for="Car.Year" class="text-danger"></span>
+
+                    </td>
+                    <td>
+                        <label asp-for="Car.Price" class="control-label"></label>
+                        <input asp-for="Car.Price" class="form-control" />
+                        <span asp-validation-for="Car.Price" class="text-danger"></span>
+                    </td>
+                    <tr></tr>
+                    <td>
+                        <label asp-for="Car.ImagePath1" class="control-label"></label>
+                        <input asp-for="Car.ImagePath1" class="form-control" />
+                        <span asp-validation-for="Car.ImagePath1" class="text-danger"></span>
+                    <img src="@item.ImagePath1" style=" max-height: 150px" />
+                    </td>
+                    <td>
+                        <label asp-for="Car.ImagePath2" class="control-label"></label>
+                        <input asp-for="Car.ImagePath2" class="form-control" />
+                        <span asp-validation-for="Car.ImagePath2" class="text-danger"></span>
+                    <img src="@item.ImagePath2" style="max-height: 150px" />
+                    </td>
+                    <td>
+                        <label asp-for="Car.ImagePath3" class="control-label"></label>
+                        <input asp-for="Car.ImagePath3" class="form-control" />
+                        <span asp-validation-for="Car.ImagePath3" class="text-danger"></span>
+                    <img src="@item.ImagePath3" style="max-height: 150px" />
+                    </td>
+                    <td>
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Car.IsBooked" /> @Html.DisplayNameFor(model => model.Car.IsBooked)
+                        </label> 
+                    </td>
+                    <tr>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </tr>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <a asp-page="./Index">Back to List</a>
+    </div>
+</section>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

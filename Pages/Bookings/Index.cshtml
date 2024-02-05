@@ -1,0 +1,64 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Bookings.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bookings</h1>
+<section>
+    <p>
+        <button><a asp-page="Create">Make Booking</a> </button>
+    </p>
+</section>
+
+<section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].OrderDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].ReturnDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].Car)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].Customer)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Booking)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReturnDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Car.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.Email)
+                    </td>
+                    <td>
+                        @if (ViewData["AdminCookies"] != null)
+                        {
+                            <a asp-page="./Edit" asp-route-id="@item.BookingId">Edit</a>;
+
+                        }
+                        <a asp-page="./Details" asp-route-id="@item.BookingId"> Details </a>
+                        <a asp-page="./Delete" asp-route-id="@item.BookingId"> Delete </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</section>

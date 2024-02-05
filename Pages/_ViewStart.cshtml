@@ -1,0 +1,15 @@
+﻿@{
+    if (ViewData["UserCookies"] == null && ViewData["AdminCookies"] == null)
+    {
+        Layout = "_Layout";
+    }
+    if (/* ViewData["UserCookies"] == null &&  */ViewData["AdminCookies"] != null)
+    {
+        Layout = "_LayoutAdmin";
+    }
+        if (ViewData["UserCookies"] != null/*  && ViewData["AdminCookies"] == null */)
+    {
+        Layout = "_LayoutUser";
+    }
+    
+}

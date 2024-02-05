@@ -1,0 +1,38 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Admins.IndexModel
+@{
+}
+
+<div>
+    <section>
+        <form method="post" class="Login-Box">
+            <div asp-validation-summary="ModelOnly"> </div>
+            <div>
+                @* Email Div *@
+                <div>
+                    <label asp-for="Admin.Email"> </label>
+                </div>
+                <div>
+                    <input type="text" asp-for="Admin.Email" />
+                </div>
+            </div>
+            <span asp-validation-for="Admin.Email"></span>
+            <div>
+                @* password div *@
+                <div>
+                    <label asp-for="Admin.Password"></label>
+                </div>
+                <div>
+                    <input type="password" asp-for="Admin.Password" />
+                </div>
+            </div>
+            <span asp-validation-for="Admin.Password"></span>
+            <div>
+                @* Submit div *@
+                <div>
+                    <input type="submit" value="Login" />
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

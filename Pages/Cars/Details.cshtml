@@ -1,0 +1,80 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Cars.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<section class="">
+    <h1>@Html.DisplayFor(modelItem => modelItem.Car.Model)</h1>
+</section>
+
+<div>
+    <section class="">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.Model)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.Brand)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.Year)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.ImagePath1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.ImagePath2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.ImagePath3)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.IsBooked)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.Car.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.Car.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.Car.Year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.Car.Price)
+                    </td>
+                    <td>
+                        <img src="@Model.Car.ImagePath1" style="max-width: 200px" />
+                    </td>
+                    <td>
+                        <img src="@Model.Car.ImagePath2" style="max-width: 200px" />
+                    </td>
+                    <td>
+                        <img src="@Model.Car.ImagePath3" style="max-width: 200px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.Car.IsBooked)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+    </section>
+
+<div>
+    <section class="">
+        <button><a asp-page="./Edit" asp-route-id="@Model.Car.CarId">Edit</a> </button>  | |
+        <button><a asp-page="./Index">Back to List</a> </button>
+    </section>
+</div>

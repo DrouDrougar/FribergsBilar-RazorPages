@@ -1,0 +1,63 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Customers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer.Password)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => modelItem.Customer.FirstName)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => modelItem.Customer.LastName)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => modelItem.Customer.Email)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => modelItem.Customer.Phone)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => modelItem.Customer.Address)
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.Customer.Password)
+                </td>
+                </tr>
+            
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Customer.CustomerId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

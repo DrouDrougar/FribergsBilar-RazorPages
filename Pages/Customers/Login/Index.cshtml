@@ -1,0 +1,64 @@
+﻿@page
+@model FribergsBilar_RazorPages.Pages.Login.IndexModel
+
+
+@{
+    var item = Model.Customer;
+    if (ViewData["UserCookie"] != null || ViewData["AdminCookies"] != null)
+    {
+        <section>
+            <div>
+                LogOut
+            </div>
+        </section>
+        <section>
+            <span asp-validation-for="Customer" span asp-validation-for="Admin" />
+        <input type="submit" value="OnLogOut" /> 
+        </section>
+
+    }
+    else
+    {
+        <section>
+            <div>
+                Login
+            </div>
+        </section>
+
+        <div>
+            <section>
+                <form method="post" class="Login-Box">
+                    <div asp-validation-summary="ModelOnly"> </div>
+                    <div>
+                        @* Email Div *@
+                        <div>
+                            <label asp-for="Customer.Email"> </label>
+                        </div>
+                        <div>
+                            <input type="text" id="UserEmail" asp-for="Customer.Email" asp-route="" />
+                        </div>
+
+                    </div>
+                    <span asp-validation-for="Customer.Email"></span>
+                    <div>
+                        @* password div *@
+                        <div>
+                            <label asp-for="Customer.Password"></label>
+                        </div>
+                        <div>
+                            <input type="password" id="UserPassword" asp-for="Customer.Password" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Customer.Password"></span>
+                    <div>
+                        @* Submit div *@
+                        <div>
+                            <input type="submit" value="Login"/>  <button><a asp-page="/customers/Create">Register</a></button>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+        </div>
+    }
+}
