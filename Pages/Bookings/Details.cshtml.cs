@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FribergsBilar_RazorPages.Data;
 using FribergsBilar_RazorPages.Data.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FribergsBilar_RazorPages.Pages.Bookings
 {
@@ -23,6 +24,8 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            ViewData["CarId"] = new SelectList(_context.Cars.Where(x => x.IsBooked == false), "CarId", "Model");
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Email");
             ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
             ViewData["UserCookies"] = Request.Cookies["UserCookies"];
             if (id == null)

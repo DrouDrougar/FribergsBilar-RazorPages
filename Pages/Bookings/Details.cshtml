@@ -38,6 +38,10 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Booking.BookingId">Edit</a> |
+    @if (ViewData["AdminCookies"] != null)
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.Booking.BookingId">Edit</a>;
+    }
+    
     <a asp-page="./Index">Back to List</a>
 </div>

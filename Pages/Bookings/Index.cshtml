@@ -51,14 +51,59 @@
                         @if (ViewData["AdminCookies"] != null)
                         {
                             <a asp-page="./Edit" asp-route-id="@item.BookingId">Edit</a>;
-
                         }
-                        <a asp-page="./Details" asp-route-id="@item.BookingId"> Details </a>
+                        @* <a asp-page="./Details" asp-route-id="@item.BookingId"> Details </a> *@
                         <a asp-page="./Delete" asp-route-id="@item.BookingId"> Delete </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
 </section>
+
+@if (ViewData["UserCookies"] != null)
+{
+    <h1>Old Bookings</h1>
+
+    <section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OldOrders[0].OrderDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OldOrders[0].ReturnDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OldOrders[0].CarId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OldOrders[0].CustomerId)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OldOrders)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReturnDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CarId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerId)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+}

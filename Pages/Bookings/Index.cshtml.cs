@@ -14,10 +14,11 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
         public IndexModel(Data.ApplicationDbContext context /*IBooking booking*/)
         {
             _context = context;
-            //_booking = booking;
+            
         }
 
         public IList<Booking> Booking { get;set; } = default!;
+        public IList<OldOrders> OldOrders { get; set; } = default!;  
 
         public async Task OnGetAsync()
         {
@@ -29,6 +30,7 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
                 Booking = await _context.Bookings.Where(x => x.CustomerId == id).Include(b => b.Car)
                     .Include(b => b.Customer).ToListAsync();
 
+                OldOrders = await _context.OldOrders.Where(x => x.CustomerId == id).ToListAsync();
             }
             else
             {
