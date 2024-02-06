@@ -19,7 +19,6 @@ namespace FribergsBilar_RazorPages.Pages.Login
         [BindProperty]
         public Customer Customer { get; set; } = default;
 
-       
         private readonly ICustomer _customerService;
         private readonly IHttpContextAccessor httpContextAccessor;
 
@@ -45,7 +44,6 @@ namespace FribergsBilar_RazorPages.Pages.Login
                 return Page();
             }
         }
-
         public async Task<IActionResult> OnPostAsync() 
         {
             try
@@ -64,7 +62,6 @@ namespace FribergsBilar_RazorPages.Pages.Login
             }
             catch (Exception)
             {
-
                 return Page();
             }
         }
