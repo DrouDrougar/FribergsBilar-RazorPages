@@ -30,7 +30,7 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
                 Booking = await _context.Bookings.Where(x => x.CustomerId == id).Include(b => b.Car)
                     .Include(b => b.Customer).ToListAsync();
 
-                OldOrders = await _context.OldOrders.Where(x => x.CustomerId == id).ToListAsync();
+                OldOrders = await _context.OldOrders.Where(x => x.CustomerId == id).Include(x => x.Customer).Include(x => x.Car).ToListAsync();
             }
             else
             {

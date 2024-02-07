@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FribergsBilar_RazorPages.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240206093158_extra update2")]
-    partial class extraupdate2
+    [Migration("20240207112141_attemptToFix")]
+    partial class attemptToFix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,6 +173,10 @@ namespace FribergsBilar_RazorPages.Migrations
 
                     b.HasKey("OldOrderId");
 
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("CustomerId");
+
                     b.ToTable("OldOrders");
                 });
 
@@ -186,6 +190,25 @@ namespace FribergsBilar_RazorPages.Migrations
 
                     b.HasOne("FribergsBilar_RazorPages.Data.Models.Customer", "Customer")
                         .WithMany("Bookings")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("FribergsBilar_RazorPages.Data.Models.OldOrders", b =>
+                {
+                    b.HasOne("FribergsBilar_RazorPages.Data.Models.Car", "Car")
+                        .WithMany()
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FribergsBilar_RazorPages.Data.Models.Customer", "Customer")
+                        .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

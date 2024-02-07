@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -45,10 +41,6 @@ namespace FribergsBilar_RazorPages.Pages.Customers
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
 
             _context.Attach(Customer).State = EntityState.Modified;
 
@@ -68,7 +60,7 @@ namespace FribergsBilar_RazorPages.Pages.Customers
                 }
             }
 
-            return RedirectToPage("./Index");
+            return Page();
         }
 
         private bool CustomerExists(int id)

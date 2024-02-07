@@ -5,7 +5,7 @@
 namespace FribergsBilar_RazorPages.Migrations
 {
     /// <inheritdoc />
-    public partial class extraupdate : Migration
+    public partial class attemptToFix : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

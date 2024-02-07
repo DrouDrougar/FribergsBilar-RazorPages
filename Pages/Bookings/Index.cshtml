@@ -55,6 +55,17 @@
                         @* <a asp-page="./Details" asp-route-id="@item.BookingId"> Details </a> *@
                         <a asp-page="./Delete" asp-route-id="@item.BookingId"> Delete </a>
                     </td>
+                    <td> 
+                        @{
+                            var todaysDate = DateTime.Now.Date;
+                            var returnDate = item.ReturnDate;
+                        }
+                        @if (todaysDate >= returnDate)
+                        {
+                            <a>This vehicle needs to be returned</a>;
+                        }
+
+                    </td>
                 </tr>
             }
         </tbody>
@@ -76,10 +87,10 @@
                         @Html.DisplayNameFor(model => model.OldOrders[0].ReturnDate)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.OldOrders[0].CarId)
+                        @Html.DisplayNameFor(model => model.OldOrders[0].Car)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.OldOrders[0].CustomerId)
+                        @Html.DisplayNameFor(model => model.OldOrders[0].Customer)
                     </th>
                     <th></th>
                 </tr>
@@ -95,11 +106,13 @@
                             @Html.DisplayFor(modelItem => item.ReturnDate)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.CarId)
+                            @Html.DisplayFor(modelItem => item.Car.Model)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.CustomerId)
+                            @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                            @Html.DisplayFor(modelItem => item.Customer.LastName)
                         </td>
+
                     </tr>
                 }
             </tbody>

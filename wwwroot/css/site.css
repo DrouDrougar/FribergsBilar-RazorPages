@@ -16,7 +16,11 @@ html {
 .sitelogo {
     display: block;
     background-image: url(friberg_logo_animation2.gif);
-    overflow: auto;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-size: larger;
 }
 
 body {
@@ -58,45 +62,6 @@ section {
 }
 
 
-a:link {
-    color: black;
-    font-size:medium;
-}
-
-a:visited {
-    color: Black;
-}
-
-
-a:hover {
-    color: orangered;
-}
-
-a:active {
-    color: blue;
-}
-.refbutton {
-}
-
-.DeleteButton {
-    color: blanchedalmond;
-    background-color: crimson;
-    link
-}
-
-
-.EditButton {
-    background-color: darkgoldenrod;
-}
-
-.DetailsButton {
-    background-color: forestgreen;
-}
-
-.CreateButton {
-    background-color: lightseagreen;
-}
-
 table {
     border-collapse: collapse;
     background-color: silver;
@@ -124,16 +89,11 @@ a {
     color: #0077cc;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
 .border-top {
@@ -164,12 +124,95 @@ button.accept-policy {
 .Login-Box {
     border-collapse: collapse;
     background-color: silver;
+    opacity: 98%;
     table-layout: fixed;
     text-align: center;
     font-size: larger;
     max-width: 400px;
     padding: 10px;
     margin-top: 10px;
-    border:solid;
+    border: solid;
     border-block-color: grey;
 }
+
+/*Logo and banner header*/
+.HeaderText {
+    font-size:xx-large;
+    font-weight: 900;
+    margin-left: 80px;
+    
+}
+
+/*Buttons and links*/
+
+a:link {
+    color: black;
+    font-size: medium;
+}
+
+    a:link:hover {
+    }
+
+a:visited {
+    color: Black;
+}
+
+a:visited {
+    color: Black;
+}
+
+a:hover {
+    color: orangered;
+}
+
+a:active {
+    color: blue;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: seagreen;
+        border-color: yellow;
+    }
+
+.DeleteButton {
+    color: blanchedalmond;
+    background-color: crimson;
+    link
+}
+
+    .DeleteButton:hover {
+        color: blanchedalmond;
+        background-color: crimson;
+        link
+    }
+
+.EditButton {
+    background-color: darkgoldenrod;
+}
+
+    .EditButton:hover {
+        background-color: darkgoldenrod;
+    }
+
+.DetailsButton {
+    background-color: forestgreen;
+}
+
+    .DetailsButton:hover {
+        background-color: forestgreen;
+    }
+
+.CreateButton {
+    background-color: lightseagreen;
+}
+
+    .CreateButton:hover {
+        background-color: lightseagreen;
+    }

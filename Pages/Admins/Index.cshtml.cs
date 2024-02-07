@@ -1,8 +1,10 @@
+using Azure.Core;
 using FribergsBilar_RazorPages.Data.Models;
 using FribergsBilar_RazorPages.Data.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace FribergsBilar_RazorPages.Pages.Admins
@@ -51,3 +53,12 @@ namespace FribergsBilar_RazorPages.Pages.Admins
     }
 }
 
+//ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
+//ViewData["UserCookies"] = Request.Cookies["UserCookies"];
+//int usersId = Convert.ToInt32(ViewData["UserCookies"] = Request.Cookies["UserCookies"]);
+//if (id == null)
+//{
+//    return NotFound();
+//}
+
+//var booking = await _context.Bookings.Include(x => x.Customer.Bookings).Include(c => c.Car).FirstOrDefaultAsync(m => m.BookingId == id);

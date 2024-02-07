@@ -9,9 +9,9 @@ namespace FribergsBilar_RazorPages.Data.Models
         public DateTime OrderDate { get; set; }
         public DateTime ReturnDate { get; set; }
         public int CarId { get; set; }
-        //public virtual Car Car { get; set; }
+        public virtual Car Car { get; set; }
         public int CustomerId { get; set; }
-        //public virtual Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
     }
 }

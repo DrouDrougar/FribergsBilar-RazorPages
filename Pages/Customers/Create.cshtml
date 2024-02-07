@@ -4,13 +4,23 @@
 @{
     ViewData["Title"] = "Create";
 }
-<section>
-    <h1>Register Here</h1>
-</section>
+@if (ViewData["UserCookies"] == null)
+{
+    <section>
+        <h1>Register Here</h1>
+    </section>
+}
+else
+{
+    <section>
+        <h1>Add a new Customer</h1>
+    </section>
+    <section>
+        <h4>Customer</h4>
+    </section>
 
-<section>
-    <h4>Customer</h4>
-</section>
+}
+
 
 <hr />
 <section>
@@ -19,32 +29,32 @@
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Customer.FirstName" class="control-label"></label>
+                    <label asp-for="Customer.FirstName" class="control-label">First Name </label>
                     <input asp-for="Customer.FirstName" class="form-control" />
                     <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Customer.LastName" class="control-label"></label>
+                    <label asp-for="Customer.LastName" class="control-label">Last Name </label>
                     <input asp-for="Customer.LastName" class="form-control" />
                     <span asp-validation-for="Customer.LastName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Customer.Email" class="control-label"></label>
+                    <label asp-for="Customer.Email" class="control-label">Email  &#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 </label>
                     <input asp-for="Customer.Email" class="form-control" />
                     <span asp-validation-for="Customer.Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Customer.Phone" class="control-label"></label>
+                    <label asp-for="Customer.Phone" class="control-label">Phone &#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205 &#8205</label>
                     <input asp-for="Customer.Phone" class="form-control" />
                     <span asp-validation-for="Customer.Phone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Customer.Address" class="control-label"></label>
+                    <label asp-for="Customer.Address" class="control-label">Address &#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205 &#8205&#8205</label>
                     <input asp-for="Customer.Address" class="form-control" />
                     <span asp-validation-for="Customer.Address" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Customer.Password" class="control-label"></label>
+                    <label asp-for="Customer.Password" class="control-label">Password &#8205 &#8205&#8205 &#8205</label>
                     <input asp-for="Customer.Password" class="form-control" />
                     <span asp-validation-for="Customer.Password" class="text-danger"></span>
                 </div>

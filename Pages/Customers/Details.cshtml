@@ -4,60 +4,66 @@
 @{
     ViewData["Title"] = "Details";
 }
+<section>
+    <h1>Customer Details</h1>
+</section>
 
-<h1>Details</h1>
-
-<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer.Phone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer.Address)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer.Password)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
+<section>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer.Password)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>
-                    @Html.DisplayFor(modelItem => modelItem.Customer.FirstName)
+                        @Html.DisplayFor(modelItem => modelItem.Customer.FirstName)
                     </td>
                     <td>
-                    @Html.DisplayFor(modelItem => modelItem.Customer.LastName)
+                        @Html.DisplayFor(modelItem => modelItem.Customer.LastName)
                     </td>
                     <td>
-                    @Html.DisplayFor(modelItem => modelItem.Customer.Email)
+                        @Html.DisplayFor(modelItem => modelItem.Customer.Email)
                     </td>
                     <td>
-                    @Html.DisplayFor(modelItem => modelItem.Customer.Phone)
+                        @Html.DisplayFor(modelItem => modelItem.Customer.Phone)
                     </td>
                     <td>
-                    @Html.DisplayFor(modelItem => modelItem.Customer.Address)
+                        @Html.DisplayFor(modelItem => modelItem.Customer.Address)
                     </td>
-                <td>
-                    @Html.DisplayFor(modelItem => modelItem.Customer.Password)
-                </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.Customer.Password)
+                    </td>
                 </tr>
-            
-        </tbody>
-    </table>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Customer.CustomerId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Customer.CustomerId">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+</section>
+

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FribergsBilar_RazorPages.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240204155238_OldOrders")]
-    partial class OldOrders
+    [Migration("20240206150956_FirstNr3")]
+    partial class FirstNr3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,6 +149,31 @@ namespace FribergsBilar_RazorPages.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("FribergsBilar_RazorPages.Data.Models.OldOrders", b =>
+                {
+                    b.Property<int>("OldOrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OldOrderId"));
+
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("OldOrderId");
+
+                    b.ToTable("OldOrders");
                 });
 
             modelBuilder.Entity("FribergsBilar_RazorPages.Data.Models.Booking", b =>

@@ -39,10 +39,8 @@
         <form method="post">
             @if (ViewData["AdminCookies"] != null || ViewData["UserCookies"] != null)
             {
-                <input type="hidden" asp-for="Booking.BookingId" />
-                ;
-                <input type="submit" value="Delete" class="btn btn-danger" />
-                ;
+                <input type="hidden" asp-for="Booking.BookingId" />;
+                <input type="submit" value="Delete" class="btn btn-danger" />;
 
             }
             <a asp-page="./Index">Back to List</a>
