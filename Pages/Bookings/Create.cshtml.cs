@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FribergsBilar_RazorPages.Data;
 using FribergsBilar_RazorPages.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FribergsBilar_RazorPages.Pages.Bookings
 {
@@ -57,13 +58,3 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
         }
     }
 }
-
-
-
-//if (ViewData["UserCookies"] != null)
-//{
-//    int id = Convert.ToInt32(ViewData["UserCookies"]);
-//    //int BookingId = _context.Bookings.Where(x => x.CustomerId == id);
-//    ViewData["BookingId"] = new SelectList(_context.Bookings.Where(x => x.CustomerId == id), "");
-//    return Page();
-//}

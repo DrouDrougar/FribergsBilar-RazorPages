@@ -11,35 +11,54 @@
 
 <hr />
 <section>
-    <div class="row">
-        <div class="col-md-4">
-            <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <table>
+           <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <tr>
+            <th>
                 <div class="form-group">
                     <label asp-for="Booking.OrderDate" class="control-label"></label>
                     <input asp-for="Booking.OrderDate" class="form-control" />
                     <span asp-validation-for="Booking.OrderDate" class="text-danger"></span>
                 </div>
+            </th>
+            <th>
                 <div class="form-group">
                     <label asp-for="Booking.ReturnDate" class="control-label"></label>
                     <input asp-for="Booking.ReturnDate" class="form-control" />
                     <span asp-validation-for="Booking.ReturnDate" class="text-danger"></span>
                 </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
                 <div class="form-group">
                     <label asp-for="Booking.Car" class="control-label"></label>
                     <select asp-for="Booking.CarId" class="form-control" asp-items="ViewBag.CarId"></select>
                 </div>
+            </th>
+            <th>
                 <div class="form-group">
                     <label asp-for="Booking.Customer" class="control-label"></label>
                     <select asp-for="Booking.CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
                 </div>
-                <div class="form-group">
-                     <a asp-page-handler="Confirm"></a><input type="submit" value="Create" class="btn btn-primary" /> 
-                    <a asp-page-handler="Confirm"></a>
-                </div>
+            </th>
+            <div class="form-group">
+                <a asp-page-handler="Confirm"></a><input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page-handler="Confirm"></a>
+            </div>
             </form>
-        </div>
-    </div>
+    </table>
+
+         
+                
+
+
+
+
+
+            
+
 
 </section>
 

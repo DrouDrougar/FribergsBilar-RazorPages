@@ -4,66 +4,97 @@
 @{
     ViewData["Title"] = "Create";
 }
+<section>
+    <h1>Create</h1>
+    <h3>Car</h3>
+</section>
 
-<h1>Create</h1>
 
-<h4>Car</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Car.Model" class="control-label"></label>
-                <input asp-for="Car.Model" class="form-control" />
-                <span asp-validation-for="Car.Model" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.Brand" class="control-label"></label>
-                <input asp-for="Car.Brand" class="form-control" />
-                <span asp-validation-for="Car.Brand" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.Year" class="control-label"></label>
-                <input asp-for="Car.Year" class="form-control" />
-                <span asp-validation-for="Car.Year" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.Price" class="control-label"></label>
-                <input asp-for="Car.Price" class="form-control" />
-                <span asp-validation-for="Car.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.ImagePath1" class="control-label"></label>
-                <input asp-for="Car.ImagePath1" class="form-control" />
-                <span asp-validation-for="Car.ImagePath1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.ImagePath2" class="control-label"></label>
-                <input asp-for="Car.ImagePath2" class="form-control" />
-                <span asp-validation-for="Car.ImagePath2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car.ImagePath3" class="control-label"></label>
-                <input asp-for="Car.ImagePath3" class="form-control" />
-                <span asp-validation-for="Car.ImagePath3" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Car.IsBooked" /> @Html.DisplayNameFor(model => model.Car.IsBooked)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<section>
+    <table>
+        <table-body>
+
+
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <th>
+                <div class="form-group">
+                    <label asp-for="Car.Model" class="control-label"></label>
+                    <input asp-for="Car.Model" class="form-control" />
+                    <span asp-validation-for="Car.Model" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="Car.Brand" class="control-label"></label>
+                    <input asp-for="Car.Brand" class="form-control" />
+                    <span asp-validation-for="Car.Brand" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="Car.Year" class="control-label"></label>
+                    <input asp-for="Car.Year" class="form-control" />
+                    <span asp-validation-for="Car.Year" class="text-danger"></span>
+                </div>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label asp-for="Car.Price" class="control-label"></label>
+                    <input asp-for="Car.Price" class="form-control" />
+                    <span asp-validation-for="Car.Price" class="text-danger"></span>
+                </div>
+            </th>
+            <tr>
+                <th>
+                    <div class="form-group">
+                        <label asp-for="Car.ImagePath1" class="control-label"></label>
+                        <input asp-for="Car.ImagePath1" class="form-control" />
+                        <span asp-validation-for="Car.ImagePath1" class="text-danger"></span>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label asp-for="Car.ImagePath2" class="control-label"></label>
+                        <input asp-for="Car.ImagePath2" class="form-control" />
+                        <span asp-validation-for="Car.ImagePath2" class="text-danger"></span>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group">
+                        <label asp-for="Car.ImagePath3" class="control-label"></label>
+                        <input asp-for="Car.ImagePath3" class="form-control" />
+                        <span asp-validation-for="Car.ImagePath3" class="text-danger"></span>
+                    </div>
+                </th>
+                <th>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Car.IsBooked" /> @Html.DisplayNameFor(model => model.Car.IsBooked)
+                        </label>
+                    </div>
+                </th>
+            </tr>
+            </form>
+        </table-body>
+    </table>
+</section>
+
+<section>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
     </div>
-</div>
+</section>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+<section>
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+</section>
+<hr />
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
