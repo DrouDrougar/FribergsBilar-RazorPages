@@ -42,30 +42,26 @@ namespace FribergsBilar_RazorPages.Pages.Customers
         public async Task<IActionResult> OnPostAsync()
         {
 
+           
             _context.Attach(Customer).State = EntityState.Modified;
-
+            await _context.SaveChangesAsync();
             try
             {
-                await _context.SaveChangesAsync();
+                
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerExists(Customer.CustomerId))
-                {
-                    return NotFound();
-                }
-                else
-                {
+
                     throw;
-                }
+                
             }
 
-            return Page();
+            return RedirectToPage("./index"); ;
         }
 
-        private bool CustomerExists(int id)
-        {
-            return _context.Customers.Any(e => e.CustomerId == id);
-        }
+        //private bool CustomerExists(int id)
+        //{
+        //    return _context.Customers.Any(e => e.CustomerId == id);
+        //}
     }
 }

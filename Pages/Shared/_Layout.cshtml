@@ -19,15 +19,16 @@
                 </span>
                 <div class="flex-Container">
                     <ul class="">
-                        <lo class="nav-item">
-                            <button> <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a> </button>
+                        <lo class="">
+                            <button>   <a class="nav-link text-dark" asp-area="" asp-page="/Index"> Home</a> </button>
                         </lo>
-                        <lo class="nav-item">
-                            <button>  <a class="nav-link text-dark" asp-area="" asp-page="/Cars/Index">Cars</a> </button>
+                        <lo class="">
+                            <button>   <a class="nav-link text-dark" asp-area="" asp-page="/Cars/Index"> Cars</a> </button>
                         </lo>
-                        <lo class="nav-item">
-                            <button> <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Login/Index" onclick="openNav()">Login</a> </button>
+                        <lo class="">
+                            <button>  <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Login/Index"> Login</a> </button>
                         </lo>
+
                     </ul>
                 </div>
             </div>
@@ -41,23 +42,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="">
-            &copy; 2024 - FribergsBilar_RazorPages - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2024 - FribergsBilar_RazorPages - <a asp-area="" asp-page="/Privacy">Privacy</a>                         
+            <lo class="">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Admins/Index">Admin</a>
+            </lo>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

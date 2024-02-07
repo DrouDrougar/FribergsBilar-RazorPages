@@ -16,7 +16,6 @@ html {
 .sitelogo {
     display: block;
     background-image: url(friberg_logo_animation2.gif);
-
     background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -31,6 +30,9 @@ body {
     background-color: #48525d;
     background-size: contain;
     background-blend-mode: hard-light;
+}
+body background {
+
 }
 
 section {
@@ -62,7 +64,7 @@ section {
 }
 
 
-table {
+table {  
     border-collapse: collapse;
     background-color: silver;
     table-layout: fixed;
@@ -89,12 +91,12 @@ a {
     color: #0077cc;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+/*.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
-}
+}*/
 
 .border-top {
     border-top: 1px solid #e5e5e5;
@@ -104,9 +106,6 @@ a {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
 
 button.accept-policy {
     font-size: 1rem;
@@ -137,10 +136,9 @@ button.accept-policy {
 
 /*Logo and banner header*/
 .HeaderText {
-    font-size:xx-large;
+    font-size: xx-large;
     font-weight: 900;
     margin-left: 80px;
-    
 }
 
 /*Buttons and links*/
@@ -168,6 +166,22 @@ a:hover {
 a:active {
     color: blue;
 }
+.NavButton {
+    border:solid;
+    border-width:2px;
+    background-color: silver;
+    opacity: 0.9;
+    margin-left:10px;
+    padding: 3px;
+}
+.Admin-btn {
+    position:relative;
+    nav-left: auto;
+    margin-right: 10px;
+}
+.Admin-btn:hover {
+    box-shadow: 10px, 10px, 10px, 30px;
+}
 
 .btn-primary {
     color: #fff;
@@ -184,13 +198,13 @@ a:active {
 .DeleteButton {
     color: blanchedalmond;
     background-color: crimson;
-    link
+    
 }
 
     .DeleteButton:hover {
         color: blanchedalmond;
         background-color: crimson;
-        link
+        
     }
 
 .EditButton {

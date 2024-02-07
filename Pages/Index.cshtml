@@ -2,9 +2,28 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
+    if (ViewData["AdminCookies"] != null)
+    {
+        <div class="text-center">
+            <h1 class="display-4">Welcome Admin</h1>
+            To Firberg Car Rental
+        </div>
+    }
+    else if (ViewData["UserCookies"] != null)
+    {
+        <div class="text-center">
+            <h1 class="display-4">Welcome User</h1>
+            To Firberg Car Rental
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            To Firberg Car Rental
+        </div>
+    }
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+

@@ -21,6 +21,8 @@ namespace FribergsBilar_RazorPages.Pages
 
         public void OnGet()
         {
+            ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
+            ViewData["UserCookies"] = Request.Cookies["UserCookies"];
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }

@@ -46,7 +46,7 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
             {
                 _context.Bookings.Add(Booking);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+                return RedirectToPage("./index");
             }
             catch (Exception)
             {

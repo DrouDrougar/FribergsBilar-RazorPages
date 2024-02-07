@@ -13,8 +13,7 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
         //private readonly IBooking _booking;
         public IndexModel(Data.ApplicationDbContext context /*IBooking booking*/)
         {
-            _context = context;
-            
+            _context = context;  
         }
 
         public IList<Booking> Booking { get;set; } = default!;

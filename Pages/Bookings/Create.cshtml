@@ -4,10 +4,11 @@
 @{
     ViewData["Title"] = "Create";
 }
+<section>
+    <h1>Create</h1>
+    <h4>Booking</h4>
+</section>
 
-<h1>Create</h1>
-
-<h4>Booking</h4>
 <hr />
 <section>
     <div class="row">
@@ -33,7 +34,8 @@
                     <select asp-for="Booking.CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                     <a asp-page-handler="Confirm"></a><input type="submit" value="Create" class="btn btn-primary" /> 
+                    <a asp-page-handler="Confirm"></a>
                 </div>
             </form>
         </div>
@@ -41,9 +43,15 @@
 
 </section>
 
-<div>
-    <a asp-page="Index">Back</a>
-</div>
+<section>
+    <div>
+        <a asp-page="Index">Back</a>
+    </div>
+</section>
+
+<script>
+
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -13,9 +13,9 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
 {
     public class EditModel : PageModel
     {
-        private readonly FribergsBilar_RazorPages.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EditModel(FribergsBilar_RazorPages.Data.ApplicationDbContext context)
+        public EditModel(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -27,20 +27,22 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
         {
             ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
             ViewData["UserCookies"] = Request.Cookies["UserCookies"];
-            if (id == null)
+            var booking = await _context.Bookings.FirstOrDefaultAsync(m => m.BookingId == id);
+            Booking = booking;
+            ViewData["CarId"] = new SelectList(_context.Cars, "CarId", "CarId");
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Email");
+            int usersId = Convert.ToInt32(ViewData["UserCookies"] = Request.Cookies["UserCookies"]);
+            if (ViewData["UserCookies"] != null)
             {
-                return NotFound();
+                ViewData["CarId"] = new SelectList(_context.Cars.Where(x => x.IsBooked == false), "CarId", "Model");
+                ViewData["CustomerId"] = new SelectList(_context.Customers.Where(c => c.CustomerId == usersId), "CustomerId", "Email");
+                return Page();
             }
 
-            var booking =  await _context.Bookings.FirstOrDefaultAsync(m => m.BookingId == id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
-            Booking = booking;
-           ViewData["CarId"] = new SelectList(_context.Cars, "CarId", "CarId");
-           ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Email");
+            ViewData["CarId"] = new SelectList(_context.Cars.Where(x => x.IsBooked == false), "CarId", "Model");
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Email");
             return Page();
+
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.

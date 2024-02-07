@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using FribergsBilar_RazorPages.Data;
 using FribergsBilar_RazorPages.Data.Models;
 
-namespace FribergsBilar_RazorPages.Pages.Bookings
+namespace FribergsBilar_RazorPages.Pages.Order
 {
-    public class ConfirmModel : PageModel
+    public class OrderConfirmModel : PageModel
     {
         private readonly FribergsBilar_RazorPages.Data.ApplicationDbContext _context;
 
-        public ConfirmModel(FribergsBilar_RazorPages.Data.ApplicationDbContext context)
+        public OrderConfirmModel(FribergsBilar_RazorPages.Data.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -23,6 +23,8 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
+            ViewData["UserCookies"] = Request.Cookies["UserCookies"];
             if (id == null)
             {
                 return NotFound();

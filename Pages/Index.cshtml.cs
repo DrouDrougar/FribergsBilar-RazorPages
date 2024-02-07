@@ -1,16 +1,24 @@
+using FribergsBilar_RazorPages.Data;
+using FribergsBilar_RazorPages.Data.Models;
 using FribergsBilar_RazorPages.Data.Session;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace FribergsBilar_RazorPages.Pages
 {
     public class IndexModel : PageModel
     {
+       
+      
+
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+            
         }
         [HttpGet]
         public IEnumerable<string> GetSessionInfo()
@@ -29,10 +37,11 @@ namespace FribergsBilar_RazorPages.Pages
             sessionInfo.Add(userId);
             return sessionInfo;
         }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
-            ViewData["UserCookies"] = Request.Cookies["UserCookies"];
+             ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
+             ViewData["UserCookies"] = Request.Cookies["UserCookies"];
+            
         }
     }
 }
