@@ -3,6 +3,8 @@ using System.Linq.Expressions;
 
 namespace FribergsBilar_RazorPages.Data.Repositories
 {
+
+    //kept the repos and interfaces even though they are not really used at all in the project since the razor pages transision.
     public class AdminRepository : IAdmin
     {
         private readonly ApplicationDbContext applicationDbContext;

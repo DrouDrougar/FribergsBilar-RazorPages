@@ -13,10 +13,8 @@
 <section>
     <table>
         <table-body>
-
-
             <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <th>
                 <div class="form-group">
                     <label asp-for="Car.Model" class="control-label"></label>
@@ -71,19 +69,17 @@
                     <div class="form-group form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="Car.IsBooked" /> @Html.DisplayNameFor(model => model.Car.IsBooked)
+                            
                         </label>
                     </div>
                 </th>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn-primary" />
+                </div>
             </tr>
             </form>
         </table-body>
     </table>
-</section>
-
-<section>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
-    </div>
 </section>
 
 <section>

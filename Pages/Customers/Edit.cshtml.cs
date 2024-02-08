@@ -41,22 +41,16 @@ namespace FribergsBilar_RazorPages.Pages.Customers
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-
-           
-            _context.Attach(Customer).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
             try
             {
-                
+                _context.Attach(Customer).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-
                     throw;
-                
             }
-
-            return RedirectToPage("./index"); ;
+            return RedirectToPage("./index"); 
         }
 
         //private bool CustomerExists(int id)

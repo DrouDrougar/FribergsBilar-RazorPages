@@ -13,8 +13,7 @@ namespace FribergsBilar_RazorPages.Pages.Customers
         
         public IndexModel(ApplicationDbContext context)
         {
-            _context = context;
-            
+            _context = context;  
         }
 
         public IList<Customer> Customer { get;set; } = default!;

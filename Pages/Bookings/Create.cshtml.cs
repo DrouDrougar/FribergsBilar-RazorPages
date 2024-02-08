@@ -27,7 +27,6 @@ namespace FribergsBilar_RazorPages.Pages.Bookings
                 ViewData["CustomerId"] = new SelectList(_context.Customers.Where(c => c.CustomerId == usersId), "CustomerId", "Email");
                 return Page();
             }
-          
             ViewData["CarId"] = new SelectList(_context.Cars.Where(x => x.IsBooked == false), "CarId", "Model");
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Email");
             return Page();

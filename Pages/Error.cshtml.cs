@@ -18,7 +18,7 @@ namespace FribergsBilar_RazorPages.Pages
         {
             _logger = logger;
         }
-
+        //onget also gets the cookies so that the program gets the correct layout.
         public void OnGet()
         {
             ViewData["AdminCookies"] = Request.Cookies["AdminCookies"];
