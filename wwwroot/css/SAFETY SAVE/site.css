@@ -1,0 +1,231 @@
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+    scroll-behavior: smooth;
+    font-family: 'Barlow';
+}
+
+@media (min-width: 768px) {
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.sitelogo {
+    display: block;
+    background-image: url(friberg_logo_animation2.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-size: larger;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url(friberg_logo_animation.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #48525d;
+    background-size: contain;
+    background-blend-mode: hard-light;
+}
+body background {
+
+}
+
+section {
+    display: flex;
+    align-self: center;
+    max-width: 80%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    section p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.flex-Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 99%;
+    max-width: 100%;
+}
+
+
+.flex-Container-h1 {
+    background-color: transparent;
+}
+
+
+table {  
+    border-collapse: collapse;
+    background-color: silver;
+    table-layout: fixed;
+    text-align: center;
+    font-size: larger;
+}
+
+.Image-overflow {
+    overflow: hidden;
+    resize: inherit;
+}
+
+table, td, th {
+    border: 1px solid;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0077cc;
+}
+
+/*.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}*/
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+.Login-Box {
+    border-collapse: collapse;
+    background-color: silver;
+    opacity: 98%;
+    table-layout: fixed;
+    text-align: center;
+    font-size: larger;
+    max-width: 400px;
+    padding: 10px;
+    margin-top: 10px;
+    border: solid;
+    border-block-color: grey;
+}
+
+/*Logo and banner header*/
+.HeaderText {
+    font-size: xx-large;
+    font-weight: 900;
+    margin-left: 80px;
+}
+
+/*Buttons and links*/
+
+a:link {
+    color: black;
+    font-size: medium;
+}
+
+    a:link:hover {
+    }
+
+a:visited {
+    color: Black;
+}
+
+a:visited {
+    color: Black;
+}
+
+a:hover {
+    color: orangered;
+}
+
+a:active {
+    color: blue;
+}
+.NavButton {
+    border:solid;
+    border-width:2px;
+    background-color: silver;
+    opacity: 0.9;
+    margin-left:10px;
+    padding: 3px;
+}
+.Admin-btn {
+    position:relative;
+    nav-left: auto;
+    margin-right: 10px;
+}
+.Admin-btn:hover {
+    box-shadow: 10px, 10px, 10px, 30px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: seagreen;
+        border-color: yellow;
+    }
+
+.DeleteButton {
+    color: blanchedalmond;
+    background-color: crimson;
+    
+}
+    .DeleteButton:hover {
+        color: blanchedalmond;
+        background-color: crimson;
+        
+    }
+
+.EditButton {
+    background-color: darkgoldenrod;
+}
+
+    .EditButton:hover {
+        background-color: darkgoldenrod;
+    }
+
+.DetailsButton {
+    background-color: forestgreen;
+}
+
+    .DetailsButton:hover {
+        background-color: forestgreen;
+    }
+
+.CreateButton {
+    background-color: lightseagreen;
+}
+
+    .CreateButton:hover {
+        background-color: lightseagreen;
+    }

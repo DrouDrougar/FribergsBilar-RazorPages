@@ -59,11 +59,11 @@
                     <td>
                         @if (ViewData["AdminCookies"] != null)
                         {
-                            <a asp-page="./Edit" asp-route-id="@item.CustomerId">Edit</a>
+                            <button class="EditButton"> <a asp-page="./Edit" asp-route-id="@item.CustomerId">Edit</a> </button>
                             ;
-                            <a asp-page="./Details" asp-route-id="@item.CustomerId">Details</a>
+                            <button class="DetailsButton"><a asp-page="./Details" asp-route-id="@item.CustomerId">Details</a> </button>
                             ;
-                            <a asp-page="./Delete" asp-route-id="@item.CustomerId">Delete</a>
+                            <button class="DeleteButton"> <a asp-page="./Delete" asp-route-id="@item.CustomerId">Delete</a> </button>
                         }
                     </td>
                 </tr>
